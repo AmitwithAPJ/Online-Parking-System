@@ -18,6 +18,9 @@ A web-based system that utilizes machine learning for automatic vehicle recognit
 - **Database**: MySQL (or PostgreSQL)
 - **Authentication**: JWT (JSON Web Tokens)
 
+## Result
+  <img src="https://github.com/user-attachments/assets/b07cb106-4f97-4ee7-9e04-ec3474efa9ad">
+
 ## Project Structure
 
 ```plaintext
