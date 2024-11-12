@@ -1,0 +1,86 @@
+Microsoft Windows [Version 10.0.22631.4317]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\amith>mysql -u root -p
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 30
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| my_db              |
+| mysql              |
+| performance_schema |
+| sys                |
+| tree               |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE User;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| my_db              |
+| mysql              |
+| performance_schema |
+| sys                |
+| tree               |
+| user               |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> USE user;
+Database changed
+mysql> CREATE TABLE Users (
+    ->     user_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),  -- Generates a UUID for each user
+    ->     name VARCHAR(100) NOT NULL,
+    ->     email VARCHAR(100) UNIQUE NOT NULL,
+    ->     password VARCHAR(255) NOT NULL,
+    ->     role ENUM('admin', 'user') DEFAULT 'user',
+    ->     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ->     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    name VARCHAR(100) NOT NULL,
+ ' at line 2
+mysql> CREATE TABLE Users (
+    ->     user_id CHAR(36) PRIMARY KEY DEFAULT (UUID()),  -- Generates a UUID for each user as a 36-character string
+    ->     name VARCHAR(100) NOT NULL,
+    ->     email VARCHAR(100) UNIQUE NOT NULL,
+    ->     password VARCHAR(255) NOT NULL,
+    ->     role ENUM('admin', 'user') DEFAULT 'user',
+    ->     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ->     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO Users (name, email, password, role)
+    -> VALUES ('John Doe', 'john.doe@example.com', 'hashed_password', 'user');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> SELECT * FROM Users;
++--------------------------------------+----------+----------------------+-----------------+------+---------------------+---------------------+
+| user_id                              | name     | email                | password        | role | created_at
+| updated_at          |
++--------------------------------------+----------+----------------------+-----------------+------+---------------------+---------------------+
+| ca6ab59d-a0b7-11ef-a255-74d4dd679c60 | John Doe | john.doe@example.com | hashed_password | user | 2024-11-12 11:04:30 | 2024-11-12 11:04:30 |
++--------------------------------------+----------+----------------------+-----------------+------+---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql>
