@@ -19,9 +19,28 @@ A web-based system that utilizes machine learning for automatic vehicle recognit
 - **Admin Dashboard**: Admin users can view vehicle records and recognition events.
 - **Image Upload**: Allows users to upload images for vehicle recognition.
 
-## Database Schema
-<img src = "https://github.com/AmitwithAPJ/Online-Parking-System/blob/main/server/models/Database_Schema.png">
-Refer to the <a href="https://github.com/AmitwithAPJ/Online-Parking-System/tree/main/server/models">Database Schema Documentation </a> for detailed field descriptions and relationships.
+## Architecture Overview
+
+![Parking Diagram](https://github.com/AmitwithAPJ/WebD_HS/blob/main/first.png)
+
+### Backend Architecture
+The backend is designed to provide robust and scalable services, implemented using the **Spring Framework**. Below are the key architectural details:
+
+- **Java Server Application**: Built using the Spring Framework, ensuring modularity and flexibility.
+- **Template Engine**: Serves HTML content dynamically using the **Thymeleaf** template engine.
+- **Static Content**: Accessed directly via predefined URLs.
+- **REST API**: Handles dynamic data exchange, with JSON used as the data format for communication.
+- **Relational Database**: Application data is stored in a relational database, with **PostgreSQL** as the primary option. For demonstration purposes, **H2** is used due to its lightweight nature and in-memory capabilities.
+
+### Frontend Architecture
+The frontend is designed to provide a seamless user experience, with the following core components:
+
+- **Backend Integration**: Communicates with the backend through asynchronous JSON messages.
+- **Static HTML**: Serves foundational data as static HTML pages.
+- **Event Handling**: Uses **jQuery** for efficient event handling and asynchronous communication with the backend.
+- **User Interface**: Built using the **Bootstrap framework**, offering a responsive and visually appealing design.
+- **Data Visualization**: Leverages **Chart.js** to create dynamic and interactive parking usage diagrams.
+
 
 ## Technologies Used
 
