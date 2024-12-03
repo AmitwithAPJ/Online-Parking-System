@@ -106,7 +106,7 @@ The server should start on http://localhost:3306 by default.
 
 
 ## Outcome
-  <img src="https://github.com/user-attachments/assets/b07cb106-4f97-4ee7-9e04-ec3474efa9ad">
+ 
 
 ## Project Structure
 
