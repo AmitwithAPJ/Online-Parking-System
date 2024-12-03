@@ -129,6 +129,7 @@ ParkIN/
 │   │   │   │   ├── css/              # CSS files for styling
 │   │   │   │   ├── js/               # JavaScript files for frontend logic
 │   │   │   │   └── images/           # Static image assets
+|   |   |   |   └── jsp/              # JSP files
 │   │   │   ├── templates/            # Thymeleaf HTML templates
 │   │   │   │   ├── index.html        # Homepage
 │   │   │   │   ├── stats.html        # Parking statistics page
