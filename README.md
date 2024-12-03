@@ -44,11 +44,26 @@ The frontend is designed to provide a seamless user experience, with the followi
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Node.js (Express)
-- **Machine Learning**: Python, TensorFlow, OpenCV
-- **Database**: MySQL (or PostgreSQL)
-- **Authentication**: JWT (JSON Web Tokens)
+### Backend Technologies
+- **Java**  
+- **Spring Boot**  
+- **Spring MVC**  
+- **Thymeleaf**  
+- **Relational Database**: PostgreSQL  
+
+### Frontend Technologies
+- **HTML/CSS/JavaScript**  
+- **Bootstrap**  
+- **jQuery**  
+- **Chart.js**  
+
+### Development Cycle Tools
+- **Jenkins**  
+- **GitHub**  
+- **Google Cloud**  
+- **YouTrack**  
+- **IntelliJ IDEA**
+
 
 # Online-Parking-System
 
