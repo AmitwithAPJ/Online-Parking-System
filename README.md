@@ -107,6 +107,9 @@ The server should start on http://localhost:3306 by default.
 
 ## Outcome
  ![Parking Diagram](https://github.com/AmitwithAPJ/WebD_HS/blob/main/Home.png)
+  ![Parking Diagram](https://github.com/AmitwithAPJ/Online-Parking-System/blob/main/images/login_image.png)
+   ![Parking Diagram](https://github.com/AmitwithAPJ/Online-Parking-System/blob/main/images/registration_image.png)
+    ![Parking Diagram](https://github.com/AmitwithAPJ/Online-Parking-System/blob/main/images/database_image.png)
 
 ## Project Structure
 
