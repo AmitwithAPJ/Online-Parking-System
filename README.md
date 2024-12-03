@@ -1,6 +1,6 @@
-# Online Vehicle Recognition System
+# Online Vehicle Recognition System aka Online-Parking-System
 
-A web-based system that utilizes machine learning for automatic vehicle recognition. The system captures vehicle images, processes them through a pre-trained model, and identifies vehicles based on their make, model, and license plate. The application includes both front-end and back-end components, as well as machine learning for image processing and vehicle recognition.
+A simple CRUD app which helps parking space owners manage the parking space.
 
 ## Table of Contents
 - [Features](#features)
