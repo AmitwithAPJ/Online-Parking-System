@@ -5,7 +5,7 @@ A web-based system that utilizes machine learning for automatic vehicle recognit
 ## Table of Contents
 - [Features](#features)
 - [Project Structure](#project-structure)
-- [Database Schema](#architecture-overview)
+- [Architecture Overview](#architecture-overview)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Outcome](#outcome)
