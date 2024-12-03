@@ -77,18 +77,29 @@ The server should start on http://localhost:3306 by default.
 ## Project Structure
 
 ```plaintext
-vehicle-recognition-system/
-├── server/                           # Backend server files
-│   ├── app.js                        # Main server file (Node.js entry point)
-│   ├── routes/                       # API endpoints
-│   ├── models/                       # Database schemas (e.g., User, Vehicle, Event)
-│   └── config/                       # Configuration files (e.g., database, environment)
-├── client/                           # Frontend static files
-│   ├── index.html                    # Main frontend HTML
-│   ├── css/                          # CSS files for styling
-│   └── js/                           # Frontend JavaScript
-├── ml_model/                         # Machine learning files
-│   ├── model/                        # Trained model files
-│   └── inference.py                  # Script to handle model inference
-├── README.md                         # Project documentation
-└── requirements.txt                  # Python dependencies for machine learning libraries
+ParkIN/
+├── src/
+│   ├── main/
+│   │   ├── java/                     # Backend source code (Spring Boot application)
+│   │   │   └── com/
+│   │   │       └── parkin/
+│   │   │           ├── controllers/  # REST API controllers
+│   │   │           ├── models/       # Entity models representing database tables
+│   │   │           ├── repositories/ # Repository interfaces for database operations
+│   │   │           └── services/     # Business logic services
+│   │   ├── resources/
+│   │   │   ├── static/               # Frontend resources
+│   │   │   │   ├── css/              # CSS files for styling
+│   │   │   │   ├── js/               # JavaScript files for frontend logic
+│   │   │   │   └── images/           # Static image assets
+│   │   │   ├── templates/            # Thymeleaf HTML templates
+│   │   │   │   ├── index.html        # Homepage
+│   │   │   │   ├── stats.html        # Parking statistics page
+│   │   │   │   └── tariff.html       # Tariff details page
+│   │   │   ├── application.properties # Spring Boot configuration
+│   │   │   └── data.sql              # Initial database data
+│   └── test/
+│       └── java/                     # Test cases for the application
+├── pom.xml                           # Maven project configuration
+└── README.md                         # Project documentation
+
