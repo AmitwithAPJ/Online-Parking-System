@@ -115,29 +115,107 @@ The server should start on http://localhost:3306 by default.
 
 ```plaintext
 ParkIN/
-├── src/
+├── gradle/                        # Gradle wrapper files
+│   ├── wrapper/
+│   ├── gradle-wrapper.jar
+│   └── gradle-wrapper.properties
+├── images/                         # Project images
+│   ├── Main_image.png
+│   ├── Parking_Manager.JPG
+│   ├── User_Panel.JPG
+│   ├── database_image.png
+│   ├── login_image.png
+│   ├── login_image2.png
+│   └── registration_image.png
+├── src/                            # Application source code
 │   ├── main/
-│   │   ├── java/                     # Backend source code (Spring Boot application)
+│   │   ├── java/                   # Backend Java code (Spring Boot application)
 │   │   │   └── com/
-│   │   │       └── parkin/
-│   │   │           ├── controllers/  # REST API controllers
-│   │   │           ├── models/       # Entity models representing database tables
-│   │   │           ├── repositories/ # Repository interfaces for database operations
-│   │   │           └── services/     # Business logic services
+│   │   │       └── parking/
+│   │   │           ├── registrations/ # Registration related files
+│   │   │           │   ├── Registration.java
+│   │   │           │   ├── RegistrationController.java
+│   │   │           │   └── RegistrationRepository.java
+│   │   │           ├── tariffs/        # Tariff related files
+│   │   │           │   ├── Tariff.java
+│   │   │           │   ├── TariffController.java
+│   │   │           │   └── TariffCrudRepository.java
+│   │   │           ├── servlet/        # Servlet-based files (if needed)
+│   │   │           │   ├── DriverServlet.java
+│   │   │           │   ├── HomeServlet.java
+│   │   │           │   ├── OwnerServlet.java
+│   │   │           │   └── RegistrationServlet.java
+│   │   │           ├── utils/          # Utility classes for the application
+│   │   │           │   ├── DatabaseConnUtils.java
+│   │   │           │   ├── DriversDAO.java
+│   │   │           │   ├── ParkingDAO.java
+│   │   │           │   └── UsersDAO.java
+│   │   │           ├── model/          # Core entity models
+│   │   │           │   ├── Driver.java
+│   │   │           │   ├── User.java
+│   │   │           │   └── VisitDetails.java
+│   │   │           └── HTMLProviderController.java # Controls dynamic HTML generation
 │   │   ├── resources/
-│   │   │   ├── static/               # Frontend resources
-│   │   │   │   ├── css/              # CSS files for styling
-│   │   │   │   ├── js/               # JavaScript files for frontend logic
-│   │   │   │   └── images/           # Static image assets
-|   |   |   |   └── jsp/              # JSP files
-│   │   │   ├── templates/            # Thymeleaf HTML templates
-│   │   │   │   ├── index.html        # Homepage
-│   │   │   │   ├── stats.html        # Parking statistics page
-│   │   │   │   └── tariff.html       # Tariff details page
-│   │   │   ├── application.properties # Spring Boot configuration
-│   │   │   └── data.sql              # Initial database data
-│   └── test/
-│       └── java/                     # Test cases for the application
-├── pom.xml                           # Maven project configuration
-└── README.md                         # Project documentation
+│   │   │   ├── static/               # Frontend resources (static assets)
+│   │   │   │   ├── css/              # CSS files
+│   │   │   │   │   ├── menu_style.css
+│   │   │   │   │   ├── reg_style.css
+│   │   │   │   │   └── style.css
+│   │   │   │   ├── images/           # Image assets
+│   │   │   │   │   ├── logo.png
+│   │   │   │   │   └── logo_navbar.png
+│   │   │   │   └── js/               # JavaScript files for frontend logic
+│   │   │   │       ├── index.js
+│   │   │   │       ├── reg_script.js
+│   │   │   │       ├── reset.js
+│   │   │   │       ├── stats.js
+│   │   │   │       ├── tariff.js
+│   │   │   │       └── utils.js
+│   │   │   ├── jsp/                 # JSP files for view rendering
+│   │   │   │   ├── Admin_View.jsp
+│   │   │   │   ├── Book_Parking.jsp
+│   │   │   │   ├── Login_Form.jsp
+│   │   │   │   ├── Menu.jsp
+│   │   │   │   ├── Registration_Form.jsp
+│   │   │   │   ├── User_Details.jsp
+│   │   │   │   └── User_View.jsp
+│   │   │   ├── templates/           # Thymeleaf templates for dynamic views
+│   │   │   │   ├── fragments/
+│   │   │   │   │   └── layout.html
+│   │   │   │   ├── layouts/
+│   │   │   │   │   └── layout.html
+│   │   │   │   ├── index.html
+│   │   │   │   ├── reset.html
+│   │   │   │   ├── stats.html
+│   │   │   │   └── tariff.html
+│   │   │   ├── application.properties # Spring Boot application configuration
+│   │   │   ├── data.sql              # Initial data for database
+│   │   │   └── V1__people.sql        # SQL script for creating or migrating database
+│   └── test/                        # Unit and integration tests
+│       └── java/                    # Test files
+│           ├── ConfigurationTest.java
+│           ├── HTMLProviderTests.java
+│           ├── ParkingTollUtilsTest.java
+│           ├── RegistrationTest.java
+│           ├── TariffTest.java
+├── gradlew                          # Gradle wrapper script for Unix-based systems
+├── gradlew.bat                      # Gradle wrapper script for Windows
+├── build.gradle                     # Gradle build file
+├── pom.xml                          # Maven project configuration
+├── settings.gradle                  # Gradle settings
+├── ParkIN.iml                       # IntelliJ IDEA project file
+├── README.md                        # Project documentation
+├── Final Review of the Project.docx  # Document for project review or final details
+├── database_image.png               # Visual representation of the database
+├── table_ss.png                     # Screenshot of the table schema
+├── table.txt                        # Text representation of the table schema
+├── Schema.sql                       # SQL schema file for database creation
+├── data.json                        # JSON file with project-related data
+├── jsLibraryMappings.xml            # XML file for JS libraries
+├── misc.xml                         # Miscellaneous configuration
+├── modules.xml                      # XML configuration for modules
+├── .classpath                       # Eclipse classpath file
+├── .project                         # Eclipse project configuration file
+└── web.xml                          # Web application deployment descriptor
+
 
